@@ -1,6 +1,8 @@
 "use strict";
 // Méthode concluante pour créer la page dynamique qui se raffraichit pour chaque click sur les filtres
 
+// mettre un try/ catch en place.. (avec finally) etape 2-1 et 2-2
+
 const apiWorks = "http://localhost:5678/api/works";
 fetch(apiWorks)
   .then(response => response.json())
@@ -9,7 +11,7 @@ fetch(apiWorks)
     galleryPhotos = works
   });
 const apiCategories = "http://localhost:5678/api/categories";
-fetch(apiCategories)
+ fetch(apiCategories)
 .then(response => response.json())
 .then(categories => {
   touteCategories(categories);
@@ -84,6 +86,38 @@ let allButton = document.createElement("button");
 }
 }
 
+// identifiant sophie.bluel@test.tld et MDP S0phie
+// Processus de connexion et déconnexion 
+
+const loginBtn = document.getElementById('loginBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+const boutonFiltre = document.querySelector(".filtre")
+// Vérifier si un utilisateur est connecté
+if (localStorage.getItem("jeton")) {
+
+    // Afficher le bouton de déconnexion
+    logoutBtn.style.display = 'flex';
+  
+    // Cacher le bouton login
+    loginBtn.style.display = 'none';
+  
+    // Cacher les boutons des filtres
+    boutonFiltre.style.display = 'none';
+  
+}
+  // DECONNEXION 
+  logoutBtn.addEventListener('click', function() {
+  
+    // Supprimer le token du local storage
+    localStorage.removeItem('jeton');
+  
+    // Cacher le bouton de déconnexion
+    logoutBtn.style.display = 'none';
+  
+    // Afficher le lien de connexion
+    loginBtn.style.display = 'inline-block';
+  });
+
 
 
 
@@ -126,13 +160,9 @@ let allButton = document.createElement("button");
 //     filtreGallery.insertAdjacentHTML ("beforeend", html)
 //  }
 //  const buttons = document.querySelectorAll("#filtres button");
-//             //pour chaque bouton, si on clique dessus, fais une fonction
-//             buttons.forEach((button) => {
-//                 button.addEventListener("click", function () {
-//                     //on enlève le classe "active" à tout les boutons
-//                   for
-//                         }
-//                     )});
+           
+            
+                    
                 
             
     
@@ -150,4 +180,3 @@ let allButton = document.createElement("button");
 //  }
 //  infoFilter();
 
-//
