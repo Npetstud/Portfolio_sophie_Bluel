@@ -218,3 +218,6 @@ footer nav ul {
 	margin: 2em
 }
 
+.modal-container{
+	visibility: hidden;
+}

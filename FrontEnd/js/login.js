@@ -25,7 +25,8 @@ connexion.addEventListener("submit", function(event) {
         return res.json();
     })
     .then((data) => {
-       console.log(data)
+       
+    
         window.localStorage.setItem("jeton", data.token)
         // Rediriger vers la page du site avec des boutons d'actions pour éditer le site
         window.location.href = "index.html";

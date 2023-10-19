@@ -1,0 +1,116 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal-wrapper {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    width: 630px;
+    height: 731px;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+ 
+  
+  .js-modal-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    
+  }
+  .js-modal-close:hover{
+    background-color: initial;
+  }
+  
+  
+  
+  .modal-projet{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+ 
+  
+  #titlemodal{
+    font-family: "Work sans";
+    color: black;
+    padding-bottom: 46px;
+    padding-top: 60px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  .project-modal{
+  
+    display: flex;
+    flex-wrap: wrap;
+    height: 70%;
+    width: 100%;
+  
+    
+  }
+  
+  .project-modal figure{
+    height: 15%;
+    margin: 7px;
+  
+  }
+  
+  .project-modal figure {
+    height: 15%;
+    margin: 7px;
+    position: relative; 
+  }
+  
+  .project-modal figure ::before {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    background: black;
+    border: black solid;
+   
+  }
+  .project-modal figure ::before{
+    position: absolute;
+    top: 5px;
+    left: 90px;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    background: black;
+    border: black solid;
+  
+  }
+  
+  
+  
+  .project-modal figure img {
+   
+    object-fit: cover; 
+    width: 110px;
+    max-width: 100%;
+    height: 130px;
+  
+  }
+  
+  

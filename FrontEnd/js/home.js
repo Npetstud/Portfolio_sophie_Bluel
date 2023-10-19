@@ -5,11 +5,25 @@
 
 const apiWorks = "http://localhost:5678/api/works";
 fetch(apiWorks)
-  .then(response => response.json())
+  .then((response) => {
+  if (!response.ok) {
+    throw new Error (" erreur dans la récuperation works");
+  }
+   return response.json();
+})
+
   .then(works => {
     toutPortfolio(works)
     galleryPhotos = works
-  });
+    renderProjectModal(works)
+  })
+ .catch(err =>{
+
+    console.error(`le message n'est pas defini ${err}`)
+   
+ }) 
+    
+
 const apiCategories = "http://localhost:5678/api/categories";
  fetch(apiCategories)
 .then(response => response.json())
@@ -70,7 +84,9 @@ let allButton = document.createElement("button");
         button.setAttribute("value", categories[i].name);
         button.innerHTML = categories[i].name;
         filtre.appendChild(button);
+        
         button.addEventListener("click", function (){
+            
         const filterphoto = galleryPhotos.filter(function(photo){
                 
                 console.log(categories[i].id, photo.categoryId)
@@ -91,19 +107,27 @@ let allButton = document.createElement("button");
 
 const loginBtn = document.getElementById('loginBtn');
 const logoutBtn = document.getElementById('logoutBtn');
-const boutonFiltre = document.querySelector(".filtre")
+const boutonFiltre = document.querySelector(".filtre");
+const boutonmodal = document.querySelector('.js-modal');
+const logoModif = document.querySelector(".fa-pen-to-square")
 // Vérifier si un utilisateur est connecté
 if (localStorage.getItem("jeton")) {
 
     // Afficher le bouton de déconnexion
     logoutBtn.style.display = 'flex';
+    
   
     // Cacher le bouton login
     loginBtn.style.display = 'none';
   
     // Cacher les boutons des filtres
     boutonFiltre.style.display = 'none';
+    logoModif.style.display ='flex';
+    
   
+}else{
+    boutonmodal.style.display ='none';
+    
 }
   // DECONNEXION 
   logoutBtn.addEventListener('click', function() {
@@ -113,6 +137,7 @@ if (localStorage.getItem("jeton")) {
   
     // Cacher le bouton de déconnexion
     logoutBtn.style.display = 'none';
+   
   
     // Afficher le lien de connexion
     loginBtn.style.display = 'inline-block';
@@ -120,7 +145,8 @@ if (localStorage.getItem("jeton")) {
 
 
 
-
+ 
+  
 
 
 // Seconde méthode non concluante n'ayant pas réussi a creer un filtre interactf
