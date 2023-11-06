@@ -88,10 +88,10 @@ const openModal = function(e) {
   
       
     }
-  }
+}
 
 
-const ajouterPhotoBtn = document.querySelector('.js-ajouter-photo');
+  const ajouterPhotoBtn = document.querySelector('.js-ajouter-photo');
 const modal1 = document.getElementById('modal1');
 const modal2 = document.getElementById('modal2');
 const backArrowBtn = document.querySelector('.fa-arrow-left');

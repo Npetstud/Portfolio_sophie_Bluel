@@ -109,7 +109,9 @@ const loginBtn = document.getElementById('loginBtn');
 const logoutBtn = document.getElementById('logoutBtn');
 const boutonFiltre = document.querySelector(".filtre");
 const boutonmodal = document.querySelector('.js-modal');
-const logoModif = document.querySelector(".fa-pen-to-square")
+const logoModif = document.querySelector("#modifier")
+const editionMode = document.querySelector(".modeEdition")
+const logoEdition = document.querySelector(".fa-pen-to-square")
 // Vérifier si un utilisateur est connecté
 if (localStorage.getItem("jeton")) {
 
@@ -123,6 +125,8 @@ if (localStorage.getItem("jeton")) {
     // Cacher les boutons des filtres
     boutonFiltre.style.display = 'none';
     logoModif.style.display ='flex';
+    editionMode.style.display = 'flex';
+    logoEdition.style.display = 'flex';
     
   
 }else{
@@ -137,6 +141,7 @@ if (localStorage.getItem("jeton")) {
   
     // Cacher le bouton de déconnexion
     logoutBtn.style.display = 'none';
+   
    
   
     // Afficher le lien de connexion

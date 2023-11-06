@@ -17,7 +17,10 @@
 	<script src="https://kit.fontawesome.com/4b69393898.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<aside class="modeEdition" style="background: black;color: white;display: none ;padding: 15px;width: 100%;justify-content: center;">
+		<i class="fa-solid fa-pen-to-square" style="display: none;margin-right: 10px;"></i>Mode édition</aside>
 <header>
+		  
 	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 	<nav>
 		<ul>
@@ -47,10 +50,10 @@
 		
 		
 	<div class="modal-projet">
-		<h2>Mes Projets</h2>
+		<h2 style="padding-right: 30px;">Mes Projets</h2>
 
-		<i class="fa-solid fa-pen-to-square" style="display: none;"></i>
-		<a href="#modal1" class="js-modal">Modifier</a> 
+		<i class="fa-solid fa-pen-to-square" id="modifier" style="display: none;margin: 10px;"></i>
+		<a href="#modal1" class="js-modal" style="margin-top: 10px;">Modifier</a> 
 		</div>
 
 		<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal">
@@ -72,9 +75,6 @@
 			
   
 			  </div>
-				
-
-				<!-- <i class="fa-solid fa-trash" style="color: #ffffff;"></i> -->
 
 		  </aside>
 

@@ -37,4 +37,4 @@ connexion.addEventListener("submit", function(event) {
         errorMessage.textContent = error.message;
         errorMessage.style.color = "red";
     });
-});
+})
